@@ -2,6 +2,8 @@
 {% block content %}
         <br>
         {% for month in months %}
-                {{month.date}}<a href="/diary/{{month.date}}">日誌</a>|<a href="/money/{{month.date}}">帳本</a>
+                {{month.date}}
+<a href="/diary/{{month.date}}"><i class="fa fa-send"></i>日誌</a>
+<a href="/money/{{month.date}}"><i class="fa fa-rmb"></i>帳本</a>
         {% endfor %}
 {% endblock %}

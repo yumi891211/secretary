@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>我的日誌：{{month}}</h1>
-<a href="/diary/word/{{month}}">匯出到Word</a><BR>
-{% for diary in diaries %}
-{{diary.time}}--{{diary.memo}}<BR>
-{% endfor %}
+        我的日誌：{{month}} <a href="/diary/word/{{month}}">匯出到Word</a><BR>
+        <table>
+          <tr><td>時間</td><td>項目</td></tr>
+{% for diary in diaries %}          
+          <tr><td>({{diary.time| date:"l"}}){{diary.time}}</td></td><td>{{diary.memo}}</td></tr>
+{% endfor %}           
+        </table>
+         
+
+
+<h1></h1>
+
+
+<BR>
+
 {% endblock %}
