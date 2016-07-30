@@ -34,7 +34,7 @@ def diary_add(request):
                         except ObjectDoesNotExist:
                                 themonth = Month(date=year*100+month)
                                 themonth.save()
-                        return redirect("/diary")
+                        return redirect("/diary"+str(year*100+month)
         else:
                 form = DiaryForm()
         return render_to_response('form.html',{'form': form}, context_instance=RequestContext(request))
